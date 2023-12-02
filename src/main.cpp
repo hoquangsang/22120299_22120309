@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 
-	write_csv << "State,Size,Interchange,Bubble,Selection,Quick,Merge,Heap,Radix\n";	// thứ tự trên hàng đầu tiên
+	write_csv << "State,Size,Interchange,Bubble,Selection,Quick,Merge,Heap,Radix,\n";	// thứ tự trên hàng đầu tiên
 	
 	
 	for (int state = random; state <= reversed; state++)								// state có 3 trạng thái: random, sorted, reversed
