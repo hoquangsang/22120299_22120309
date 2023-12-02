@@ -30,19 +30,20 @@ void Bubble_sort(int* arr, int size)
 
 void Selection_sort(int* arr, int size) 
 {
-	int minIdx;														// biến lưu chỉ mục của phần tử nhỏ nhất
+	int minIdx;																		// biến lưu chỉ mục của phần tử nhỏ nhất
 
-	for (int idx_1 = 0; idx_1 < size - 1; idx_1++)					//
+	for (int idx_1 = 0; idx_1 < size - 1; idx_1++)									//
 	{
-		minIdx = idx_1;												// đặt phần tử nhỏ nhất ở đầu mảng
+		minIdx = idx_1;																// đặt phần tử nhỏ nhất ở đầu mảng
 
-		for (int idx_2 = idx_1 + 1; idx_2 < size; idx_2++)			// tìm phần tử nhỏ nhất ở mảng chưa sắp
+		for (int idx_2 = idx_1 + 1; idx_2 < size; idx_2++)							// duyệt phần mảng chưa sắp
 		{
 			if (arr[minIdx] > arr[idx_2]) {
-				minIdx = idx_2;
+				minIdx = idx_2;														// tìm vị trí của phần tử nhỏ nhất
 			}
 		}
-		if (minIdx != idx_1)										// đặt phần tử nhỏ nhất về đúng vị trí (đầu tiên của phần chưa sắp)
+
+		if (minIdx != idx_1)														// đặt phần tử nhỏ nhất về đúng vị trí (đầu tiên của phần chưa sắp)
 		{
 			std::swap(arr[minIdx], arr[idx_1]);
 		}
@@ -76,9 +77,9 @@ void Heap_sort(int* arr, int size)
 		Heapify(arr, size, cur);													// heapify
 	}
 
-	for (int cur = size - 1; cur > 0; cur--)										// đưa phần tử lớn nhất (ở cây max heap) ra cuối mảng
+	for (int cur = size - 1; cur > 0; cur--)										// duyệt cây heap từ sau ra trước 
 	{
-		std::swap(arr[0], arr[cur]);												//
+		std::swap(arr[0], arr[cur]);												// đưa phần tử lớn nhất (ở cây max heap) ra cuối mảng
 
 		Heapify(arr, cur, 0);														// duy trì tính chất cây heap
 	}
@@ -115,24 +116,24 @@ void Merge(int* arr, int left, int mid, int right)
 
 	while (Right_idx < Right_size)arr[left + idx++] = Right_arr[Right_idx++];		// sao chep phan con lai cua mang ben phai neu co
 
-	delete[] Left_arr;
-	delete[] Right_arr;
+	delete[] Left_arr;																// thu hồi vùng nhớ
+	delete[] Right_arr;																// thu hồi vùng nhớ
 }
 void Merge_sort(int* arr, int left, int right) 
 {
 	if (left < right)
 	{
-		int mid = left + (right - left) / 2;								// middle index
+		int mid = left + (right - left) / 2;										// middle index
 
-		Merge_sort(arr, left, mid);											// sort: left array
+		Merge_sort(arr, left, mid);													// sort: left array
 
-		Merge_sort(arr, mid + 1, right);									// sort: right array
+		Merge_sort(arr, mid + 1, right);											// sort: right array
 
-		Merge(arr, left, mid, right);										// merge: left + right
+		Merge(arr, left, mid, right);												// merge: left + right
 	}
 }
 void Merge_sort(int* arr, int size) {
-	Merge_sort(arr, 0, size - 1);													// overload Merge_sort: call funtion
+	Merge_sort(arr, 0, size - 1);													// overload Merge_sort: call function
 }
 
 void Quick_sort(int* arr, int low, int high) {
