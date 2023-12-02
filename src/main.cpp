@@ -146,7 +146,7 @@ int main(int argc, char** argv) {
 			write_csv << TimeCPUused(Quick_sort, arr, sort++, state, size) << ",";		// ghi thời gian chạy của Quick_sort
 			write_csv << TimeCPUused(Heap_sort, arr, sort++, state, size) << ",";		// ghi thời gian chạy của Heap_sort
 			write_csv << TimeCPUused(Merge_sort, arr, sort++, state, size) << ",";		// ghi thời gian chạy của Merge_sort
-			write_csv << TimeCPUused(Radix_sort, arr, sort++, state, size);				// ghi thời gian chạy của Radix_sort
+			write_csv << TimeCPUused(Radix_sort, arr, sort++, state, size) << ",";		// ghi thời gian chạy của Radix_sort
 			write_csv << "\n";
 			
 			delete[] arr;
