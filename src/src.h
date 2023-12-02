@@ -20,10 +20,9 @@ enum SortOrder																// status: sort order in runtime.csv (column)
 	Bubble = 2,
 	Selection = 3,
 	Quick = 4,
-	Quick_randomized = 5,
-	Merge = 6,
-	Heap = 7,
-	Radix = 8
+	Merge = 5,
+	Heap = 6,
+	Radix = 7
 };
 
 enum StateOrder																// status: state order in runtime.csv (row)
@@ -39,12 +38,12 @@ std::string parent_path(std::string _PATH_ = __FILE__);						// function: get pa
 
 void write_file_results(const int*, int, int, int);							// function: write file txt in results folder
 
-double TimeCPUused(SortFunction, int, int, int);							// function: get time CPU used
+double TimeCPUused(SortFunction, const int*, int, int, int);				// function: get time CPU used
 
 
 const std::string _PROGRAM_PATH_ = __FILE__;								// path: file main.cpp
 
-const std::string _SRC_PATH_ = parent_path(_PROGRAM_PATH_);					// path: folder ./src (containing main.cpp)
+const std::string _SRC_PATH_ = parent_path(_PROGRAM_PATH_);					// path: folder ./src (containing main.cpp, algorithms.cpp, algorithm.h,...)
 
 const std::string _DIRECTORY_PATH_ = parent_path(_SRC_PATH_);				// path: folder 22120299_22120309 - directory root (containing ./src, ./results, runtime.csv, report.pdf)
 

@@ -1,29 +1,40 @@
 #include "algorithms.h"
 
-void Interchange_sort(int* arr, int size) {
-	int temp;														// use swap
-
-	for (int idx_1 = 0; idx_1 < size - 1; idx_1++)					//
+void Interchange_sort(int* arr, int size)
+{
+	for (int idx_1 = 0; idx_1 < size - 1; idx_1++)									// 
 	{
-		for (int idx_2 = idx_1 + 1; idx_2 < size; idx_2++)			//
+		for (int idx_2 = idx_1 + 1; idx_2 < size; idx_2++)							//
 		{
-			if (arr[idx_1] > arr[idx_2])							// swap
+			if (arr[idx_1] > arr[idx_2])											// nếu sai vị trí
 			{
-				temp = arr[idx_1];
-				arr[idx_1] = arr[idx_2];
-				arr[idx_2] = temp;
+				std::swap(arr[idx_1], arr[idx_2]);
 			}
 		}
 	}
 }
 
-void Selection_sort(int* arr, int size) {
-	int minIdx;														//
-	int temp;														//
+void Bubble_sort(int* arr, int size) 
+{
+	for (int idx_1 = size - 1; idx_1 > 0; idx_1--)									// thực hiện cho tất cả các phần tử:
+	{
+		for (int idx_2 = 0; idx_2 < idx_1; idx_2++)									// thực hiện "nổi bọt": đưa phần tử lớn nhất "nổi" lên (đưa về sau cùng)
+		{
+			if (arr[idx_2] > arr[idx_2 + 1])
+			{
+				std::swap(arr[idx_2], arr[idx_2 + 1]);
+			}
+		}
+	}
+}
+
+void Selection_sort(int* arr, int size) 
+{
+	int minIdx;														// biến lưu chỉ mục của phần tử nhỏ nhất
 
 	for (int idx_1 = 0; idx_1 < size - 1; idx_1++)					//
 	{
-		minIdx = idx_1;												//
+		minIdx = idx_1;												// đặt phần tử nhỏ nhất ở đầu mảng
 
 		for (int idx_2 = idx_1 + 1; idx_2 < size; idx_2++)			// tìm phần tử nhỏ nhất ở mảng chưa sắp
 		{
@@ -33,206 +44,163 @@ void Selection_sort(int* arr, int size) {
 		}
 		if (minIdx != idx_1)										// đặt phần tử nhỏ nhất về đúng vị trí (đầu tiên của phần chưa sắp)
 		{
-			temp = arr[minIdx];
-			arr[minIdx] = arr[idx_1];
-			arr[idx_1] = temp;
+			std::swap(arr[minIdx], arr[idx_1]);
 		}
 	}
 }
 
-void Bubble_sort(int* arr, int size) {
-	int temp;
-
-	for (int idx_1 = size - 1; idx_1 > 0; idx_1--)					// thực hiện cho tất cả các phần tử:
-	{
-
-		for (int idx_2 = 0; idx_2 < idx_1; idx_2++)					// thực hiện "nổi bọt": đưa phần tử lớn nhất "nổi" lên (đưa về sau cùng)
-		{
-			if (arr[idx_2] > arr[idx_2 + 1])
-			{
-				temp = arr[idx_2];
-				arr[idx_2] = arr[idx_2 + 1];
-				arr[idx_2 + 1] = temp;
-			}
-		}
-	}
-}
-
-void Heapify(int* arr, int size, int cur_idx) {
-	int largest_idx = cur_idx;										//
-	int left_child = cur_idx * 2 + 1;								//
-	int right_child = cur_idx * 2 + 2;								//
+void Heapify(int* arr, int size, int cur_idx) 
+{
+	int largest_idx = cur_idx;														// node hiện tại là node lớn nhất
+	int left_child = cur_idx * 2 + 1;												// node con trái
+	int right_child = cur_idx * 2 + 2;												// node con phải
 
 	if (left_child < size && arr[left_child] > arr[largest_idx]) {
-		largest_idx = left_child;									// largest is left child
+		largest_idx = left_child;													// largest is left child
 	}
 	if (right_child < size && arr[right_child] > arr[largest_idx]) {
-		largest_idx = right_child;									// largest is right child
+		largest_idx = right_child;													// largest is right child
 	}
 
-	if (largest_idx != cur_idx)										// nếu 1 trong 2 "node con" lớn hơn "node cha", đổi chỗ
+	if (largest_idx != cur_idx)														// nếu 1 trong 2 "node con" lớn hơn "node cha", đổi chỗ
 	{
-		int temp = arr[largest_idx];								// swap
-		arr[largest_idx] = arr[cur_idx];
-		arr[cur_idx] = temp;
+		std::swap(arr[largest_idx], arr[cur_idx]);									// swap
 
-		Heapify(arr, size, largest_idx);							// recursive
+		Heapify(arr, size, largest_idx);											// recursive
 	}
 }
-void Heap_sort(int* arr, int size) {
-
-	for (int cur = size / 2 - 1; cur >= 0; cur--)					// Build Heap: create MAX HEAP
+void Heap_sort(int* arr, int size)
+{
+	for (int cur = size / 2 - 1; cur >= 0; cur--)									// Build Heap: create MAX HEAP
 	{
-		Heapify(arr, size, cur);									// heapify
+		Heapify(arr, size, cur);													// heapify
 	}
 
-	int temp;														// use to swap
-	for (int cur = size - 1; cur > 0; cur--)						// đưa phần tử lớn nhất (ở cây max heap) ra cuối mảng
+	for (int cur = size - 1; cur > 0; cur--)										// đưa phần tử lớn nhất (ở cây max heap) ra cuối mảng
 	{
-		temp = arr[cur]; arr[cur] = arr[0]; arr[0] = temp;			// swap
+		std::swap(arr[0], arr[cur]);												//
 
-		Heapify(arr, cur, 0);										// duy trì tính chất cây heap
+		Heapify(arr, cur, 0);														// duy trì tính chất cây heap
 	}
 }
 
-void Merge(int* arr, int left, int mid, int right) {
-	int Lsize = mid - left + 1;										// size of left array
-	int Rsize = right - mid;										// size of right array
+void Merge(int* arr, int left, int mid, int right)
+{
+	int Left_size = mid - left + 1;													// size of left array
+	int Right_size = right - mid;													// size of right array
 
 	int idx;
-	int* Larr = new int[Lsize];										// dynamically allocate temp array
-	int* Rarr = new int[Rsize];										// dynamically allocate temp array
-	for (idx = 0; idx < Lsize; idx++) {
-		Larr[idx] = arr[idx + left];								// sao chép phần bên trái vào mảng tạm	
+	int* Left_arr = new int[Left_size];												// dynamically allocate temp array
+	int* Right_arr = new int[Right_size];											// dynamically allocate temp array
+	for (idx = 0; idx < Left_size; idx++) {
+		Left_arr[idx] = arr[idx + left];											// sao chép phần bên trái vào mảng tạm	
 	}
-	for (idx = 0; idx < Rsize; idx++) {
-		Rarr[idx] = arr[idx + mid + 1];								// sao chép phần bên phải vào mảng tạm
+	for (idx = 0; idx < Right_size; idx++) {
+		Right_arr[idx] = arr[idx + mid + 1];										// sao chép phần bên phải vào mảng tạm
 	}
 
-	int Lidx, Ridx = Lidx = idx = 0;								// index of Left, Right, Array
+	int Left_idx, Right_idx = Left_idx = idx = 0;									// index of Left, Right, Array
 
-	while (Lidx < Lsize && Ridx < Rsize)							// sao chep gia tri tu 2 mang phu vao mang chinh
+	while (Left_idx < Left_size && Right_idx < Right_size)							// sao chep gia tri tu 2 mang phu vao mang chinh
 	{
-		if (Larr[Lidx] <= Rarr[Ridx]) {
-			arr[left + idx++] = Larr[Lidx++];						// phan tu trai nho hon thi sap vao truoc
+		if (Left_arr[Left_idx] <= Right_arr[Right_idx]) {
+			arr[left + idx++] = Left_arr[Left_idx++];								// phan tu trai nho hon thi sap vao truoc
 		}
 		else {
-			arr[left + idx++] = Rarr[Ridx++];						// phan tu phai nho hon thi sap vao truoc
+			arr[left + idx++] = Right_arr[Right_idx++];								// phan tu phai nho hon thi sap vao truoc
 		}
 	}
 
-	while (Lidx < Lsize) arr[left + idx++] = Larr[Lidx++];			// sao chep phan con lai cua mang ben trai neu co
+	while (Left_idx < Left_size) arr[left + idx++] = Left_arr[Left_idx++];			// sao chep phan con lai cua mang ben trai neu co
 
-	while (Ridx < Rsize)arr[left + idx++] = Rarr[Ridx++];			// sao chep phan con lai cua mang ben phai neu co
+	while (Right_idx < Right_size)arr[left + idx++] = Right_arr[Right_idx++];		// sao chep phan con lai cua mang ben phai neu co
 
-	delete[] Larr;
-	delete[] Rarr;
+	delete[] Left_arr;
+	delete[] Right_arr;
 }
-void Merge_sort(int* arr, int left, int right) {
-	if (left < right) {
-		int mid = left + (right - left) / 2;						// middle index
+void Merge_sort(int* arr, int left, int right) 
+{
+	if (left < right)
+	{
+		int mid = left + (right - left) / 2;								// middle index
 
-		Merge_sort(arr, left, mid);									// sort: left array
+		Merge_sort(arr, left, mid);											// sort: left array
 
-		Merge_sort(arr, mid + 1, right);							// sort: right array
+		Merge_sort(arr, mid + 1, right);									// sort: right array
 
-		Merge(arr, left, mid, right);								// merge: left + right
+		Merge(arr, left, mid, right);										// merge: left + right
 	}
 }
 void Merge_sort(int* arr, int size) {
-	Merge_sort(arr, 0, size - 1);									// overload Merge_sort: call funtion
+	Merge_sort(arr, 0, size - 1);													// overload Merge_sort: call funtion
 }
 
 void Quick_sort(int* arr, int low, int high) {
 	if (low >= high) return;
+	int pivotIdx = low + std::rand() % (high - low + 1);							// select pivot index: random
 
-	int pivotIdx = (low + high) / 2;								// select pivot index: between array
-	int first = low;												// first unknown
-	int last = high;												// last unknown
+	std::swap(arr[pivotIdx], arr[low]);												// đưa giá trị pivot ra đầu mảng
+	pivotIdx = low;																	// đặt pivot index = low index
 
-	while (true) {
-		while (arr[first] < arr[pivotIdx]) first++;					// find wrong "first index"
-		while (arr[last] > arr[pivotIdx]) last--;					// find wrong "last index"
+	int first = low + 1;										        			// first unknown
+	int last = high;																// last unknown
 
-		if (first > last) break;									// has sorted
+	while (first <= last) {
+		while (first <= last && arr[first] < arr[pivotIdx]) first++;				// find wrong "first index"
+		while (first <= last && arr[last] > arr[pivotIdx]) last--;					// find wrong "last index"
 
-		std::swap(arr[first++], arr[last--]);						// else: swap wrong index
+		if (first > last) break;													// has sorted
+
+		std::swap(arr[first++], arr[last--]);										//
 	}
-	Quick_sort(arr, low, last);										// sort left array pivot
-	Quick_sort(arr, first, high);									// sort right array pivot
+
+	std::swap(arr[pivotIdx], arr[last]);
+
+	Quick_sort(arr, low, last - 1);													// sort left (last is pivot index)
+	Quick_sort(arr, last + 1, high);												// sort right (last is pivot index)
 }
 void Quick_sort(int* arr, int size) {
-	Quick_sort(arr, 0, size - 1);									// overload Quick_sort: call function
+	srand(time(NULL));
+	Quick_sort(arr, 0, size - 1);													// overload: call Quick_sort
 }
 
-void Quick_sort_randomized(int* arr, int low, int high) {
-	if (low >= high) return;
+void Counting_sort_at_exp(int* arr, int size, int exp)
+{
+	int* results = new int[size];													// mảng tạm thời lưu trữ kết quả sắp xếp
+	
+	int counts[10] = { 0 };															// khởi tạo mảng đếm số lần xuất hiện chữ số thứ i 
 
-	srand((time(NULL)));
-	int pivotIdx = low + rand() % (high - low + 1);					// select pivot index: random
-
-	std::swap(arr[pivotIdx], arr[(low + high) / 2]);				// swap pivot - middle 
-	pivotIdx = (low + high) / 2;									// put P in the middle of the array
-
-	int first = low;												// first unknown
-	int last = high;												// last unknown
-	while (true) {
-		while (arr[first] < arr[pivotIdx]) first++;					// find wrong "first index"
-		while (arr[last] > arr[pivotIdx]) last--;					// find wrong "last index"
-
-		if (first > last) break;									// has sorted
-
-		std::swap(arr[first++], arr[last--]);						// else: swap wrong index
-	}
-	Quick_sort(arr, low, last);										// sort left array
-	Quick_sort(arr, first, high);									// sort right array
-}
-void Quick_sort_randomized(int* arr, int size) {
-	Quick_sort_randomized(arr, 0, size - 1);						// overload Quick_sort_randomized: call function
-}
-
-void Radix_sort(int* arr, int size) {
-	/*
-			| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-		0	|
-	   ...	|
-	 size-1 |
-
-	*/
-
-	int** Buckets = new int* [size + 1];							// Create Buckets to sort elements: row = size
-	for (int row = 0; row < size; row++) {
-		Buckets[row] = new int[10];									// columns = 10 = radix DEC
+	for (int idx = 0; idx < size; idx++) {
+		counts[(arr[idx] / exp) % 10]++;											// đếm số lần xuất hiện chữ số i
 	}
 
-	for (int exp = 1; ; exp *= 10) {								// sort by: digit [log10(exp) + 1]
+	for (int dig = 1; dig < 10; dig++)												// đưa mảng đếm về mảng lưu vị trí cuối cùng của các phần tử
+	{
+		counts[dig] += counts[dig - 1];												// chuyển về mảng tổng tích lũy
+	}
 
-		int countDigits[10] = { 0 };								// radix counting array
+	for (int idx = size - 1; idx >= 0; idx--)										// Xây dựng mảng kết quả dựa trên tổng tích lũy và vị trí cuối cùng của từng phần tử
+	{
+		results[--counts[(arr[idx] / exp) % 10]] = arr[idx];						// đặt phần tử thứ idx vào đúng vị trí và giảm số đếm của mảng đếm
+	}
 
-		for (int idx = 0; idx < size; idx++) {
-			int dig = (arr[idx] / exp) % 10;						// is col or [radix]
-			Buckets[countDigits[dig]++][dig] = arr[idx];			// put the elements into array B
-		}
-
-		if (countDigits[0] == size) break;							// array is sorted when all element have radix: 0 
-
-		for (int dig = 0, idx = 0; dig < 10; dig++) 				// copy Buckets into array in order: first column -> last column
-		{
-			for (int row = 0; row < countDigits[dig]; row++)		// copy buckets into array in order: first row -> last row
-			{
-				arr[idx++] = Buckets[row][dig];
-			}
+	for (int idx = 0; idx < size; idx++) {
+		arr[idx] = results[idx];													// copy arr vao mang ket qua
+	}
+	delete[] results;																// thu hồi vùng nhớ đã cấp phát
+	results = nullptr;
+}
+void Radix_sort(int* arr, int size)
+{
+	int maxValue = arr[0];															// max element
+	for (int idx = 1; idx < size; idx++) {
+		if (maxValue < arr[idx]) {
+			maxValue = arr[idx];													// find max
 		}
 	}
 
-	if (Buckets) {
-		for (int row = 0; row < size; row++) {
-			if (Buckets[row]) {
-				delete[] Buckets[row];								// clear *Buckets
-				Buckets[row] = nullptr;
-			}
-		}
-		delete[] Buckets;											// clear **Buckets
-		Buckets = nullptr;
+	for (int exp = 1; maxValue / exp > 0; exp *= 10)								// sắp xếp tới khi chữ số đầu tiên của maxV được sắp xếp đúng
+	{
+		Counting_sort_at_exp(arr, size, exp);										// sap xep mang theo chu so thu i = log(exp) tu phai -> trai										
 	}
 }

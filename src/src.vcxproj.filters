@@ -90,15 +90,6 @@
     <Text Include="..\results\quick_random_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quickRandomized_random_1000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_random_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_random_10000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\radix_random_1000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -132,9 +123,6 @@
     <Text Include="..\results\quick_random_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quickRandomized_random_30000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\radix_random_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -147,16 +135,16 @@
     <Text Include="..\results\bubble_random_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\merge_random_100000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\quick_random_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quickRandomized_random_100000.txt">
+    <Text Include="..\results\selection_random_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\selection_random_100000.txt">
+    <Text Include="..\results\heap_random_100000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\merge_random_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\bubble_sorted_1000.txt">
@@ -168,16 +156,10 @@
     <Text Include="..\results\bubble_sorted_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\heap_random_100000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\heap_sorted_1000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\heap_sorted_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\heap_sorted_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\interchange_sorted_1000.txt">
@@ -195,25 +177,10 @@
     <Text Include="..\results\merge_sorted_3000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\merge_sorted_10000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\quick_sorted_1000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\quick_sorted_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quick_sorted_10000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_sorted_1000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_sorted_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_sorted_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\radix_random_100000.txt">
@@ -225,9 +192,6 @@
     <Text Include="..\results\radix_sorted_3000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\radix_sorted_10000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\selection_sorted_1000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -237,13 +201,22 @@
     <Text Include="..\results\selection_sorted_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\bubble_sorted_30000.txt">
+    <Text Include="..\results\heap_sorted_10000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\merge_sorted_10000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\quick_sorted_10000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\radix_sorted_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\interchange_sorted_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\heap_sorted_30000.txt">
+    <Text Include="..\results\bubble_sorted_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\merge_sorted_30000.txt">
@@ -252,13 +225,13 @@
     <Text Include="..\results\quick_sorted_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quickRandomized_sorted_30000.txt">
+    <Text Include="..\results\selection_sorted_30000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\heap_sorted_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\radix_sorted_30000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\selection_sorted_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\interchange_sorted_100000.txt">
@@ -267,10 +240,13 @@
     <Text Include="..\results\bubble_sorted_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quick_sorted_100000.txt">
+    <Text Include="..\results\selection_sorted_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\selection_sorted_100000.txt">
+    <Text Include="..\results\merge_sorted_100000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
+    <Text Include="..\results\quick_sorted_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\bubble_reversed_1000.txt">
@@ -280,9 +256,6 @@
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\heap_reversed_1000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\heap_reversed_3000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\heap_sorted_100000.txt">
@@ -300,22 +273,10 @@
     <Text Include="..\results\merge_reversed_3000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\merge_sorted_100000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\quick_reversed_1000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\quick_reversed_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_reversed_1000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_reversed_3000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_sorted_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\radix_reversed_1000.txt">
@@ -333,6 +294,9 @@
     <Text Include="..\results\bubble_reversed_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
+    <Text Include="..\results\heap_reversed_3000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
     <Text Include="..\results\heap_reversed_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -343,9 +307,6 @@
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\quick_reversed_10000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_reversed_10000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\radix_reversed_3000.txt">
@@ -372,9 +333,6 @@
     <Text Include="..\results\quick_reversed_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
-    <Text Include="..\results\quickRandomized_reversed_30000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
     <Text Include="..\results\radix_reversed_30000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -387,6 +345,9 @@
     <Text Include="..\results\bubble_reversed_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
+    <Text Include="..\results\quick_reversed_100000.txt">
+      <Filter>Resource Files\result</Filter>
+    </Text>
     <Text Include="..\results\selection_reversed_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
@@ -394,12 +355,6 @@
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\merge_reversed_100000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quick_reversed_100000.txt">
-      <Filter>Resource Files\result</Filter>
-    </Text>
-    <Text Include="..\results\quickRandomized_reversed_100000.txt">
       <Filter>Resource Files\result</Filter>
     </Text>
     <Text Include="..\results\radix_reversed_100000.txt">
